@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indian Sign Language Interpreter</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Signsei - Indian Sign Language Interpreter</h1>
+            <p>Real-time sign language recognition using computer vision</p>
+        </header>
+        
+        <div class="main-content">
+            <div class="video-container">
+                <img src="{{ url_for('video_feed') }}" alt="Video Stream" id="video-stream">
+            </div>
+
+            <div class="prediction-container">
+                <h2>Current Prediction</h2>
+                <div class="prediction-display" id="prediction-display">
+                    <div class="prediction-value" id="prediction-value">None</div>
+                </div>
+                <div class="legend">
+                    <h3>Available Signs</h3>
+                    <div class="sign-categories">
+                        <div class="category">
+                            <h4>Numbers</h4>
+                            <div class="signs">0, 1, 2, 3, 4, 5, 6, 7, 8, 9</div>
+                        </div>
+                        <div class="category">
+                            <h4>Letters</h4>
+                            <div class="signs">A, B, C, D, E</div>
+                        </div>
+                        <div class="category">
+                            <h4>Phrases</h4>
+                            <div class="signs">Love You, All the Best</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="instructions">
+            <h2>How to Use</h2>
+            <ol>
+                <li>Allow camera access when prompted</li>
+                <li>Position your hand clearly in the frame</li>
+                <li>Make one of the signs from the available options</li>
+                <li>Hold the sign steady for best results</li>
+            </ol>
+        </div>
+
+        <footer>
+            <p>Indian Sign Language Interpreter &copy; 2025</p>
+        </footer>
+    </div>
+    
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
